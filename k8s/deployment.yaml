@@ -16,6 +16,13 @@ spec:
     spec:
       containers:
         - image: quay.io/openshift-pipeline/vote-api:latest
+          resources:
+            limits:
+               cpu: 100m
+               memory: 500Mi
+            requests:
+               cpu: 20m
+               memory: 128Mi
           imagePullPolicy: Always
           name: pipelines-vote-api
           ports:
